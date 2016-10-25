@@ -1,5 +1,6 @@
 import datetime
 import os
+import sys
 
 from peewee import *
 
@@ -34,11 +35,12 @@ def main_menu():
         print('s: search')
         print('q: quit')
         choice = input('> ').lower().strip()
-        if choice != 'q':
-            if choice == 's':
-                search_menu()
-            else:
-                add_entry()
+        if choice == 'q':
+            sys.exit()
+        elif choice == 's':
+            search_menu()
+        else:
+            add_entry()
 
 
 def search_menu():
@@ -153,7 +155,7 @@ def display_entries(entries):
         print("  q: Quit to main menu")
         user_input = input("> ").lower()
         if user_input == 'q':
-            start()
+            main_menu()
         elif user_input == 'p':
             if counter <= 0:
                 error = "End of list. Can't go back."

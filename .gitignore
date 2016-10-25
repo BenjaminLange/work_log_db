@@ -1,6 +1,9 @@
+.idea/
 .vscode/
 __pycache__/
+htmlcov/
 
+.coverage
 *.csv
 *.db
 .flake8
